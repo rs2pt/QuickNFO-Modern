@@ -44,6 +44,18 @@ The signed `QuickNFO.app` lands in `build/Build/Products/Release/`.
 
 ## Install
 
+With [Homebrew](https://brew.sh):
+
+```sh
+brew install --cask rs2pt/tap/quicknfo-modern
+```
+
+The app is not notarized (it is ad-hoc signed), so a manually downloaded copy is blocked on first launch.
+Allow it under System Settings → Privacy & Security → "Open Anyway", or run
+`xattr -dr com.apple.quarantine /Applications/QuickNFO.app`. The Homebrew cask does this for you.
+
+To install from a local build instead:
+
 ```sh
 cp -R build/Build/Products/Release/QuickNFO.app /Applications/
 open /Applications/QuickNFO.app   # launch once so macOS registers the extensions
