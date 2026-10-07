@@ -44,15 +44,17 @@ The signed `QuickNFO.app` lands in `build/Build/Products/Release/`.
 
 ## Install
 
+> **You may need to authorize the app the first time.** It is not signed with an Apple Developer ID or
+> notarized, because the author doesn't have a paid Apple Developer account. macOS will likely block the
+> first launch with a "can't be opened" warning. This is expected, and the app can be allowed in one step:
+> System Settings → Privacy & Security → scroll down → "Open Anyway", or run
+> `xattr -dr com.apple.quarantine /Applications/QuickNFO.app`. The Homebrew cask removes the quarantine flag for you.
+
 With [Homebrew](https://brew.sh):
 
 ```sh
 brew install --cask rs2pt/tap/quicknfo-modern
 ```
-
-The app is not notarized (it is ad-hoc signed), so a manually downloaded copy is blocked on first launch.
-Allow it under System Settings → Privacy & Security → "Open Anyway", or run
-`xattr -dr com.apple.quarantine /Applications/QuickNFO.app`. The Homebrew cask does this for you.
 
 To install from a local build instead:
 
